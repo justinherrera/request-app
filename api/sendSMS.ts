@@ -12,16 +12,14 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     const { to, body } = req.body 
     const accountSid = process.env.REACT_APP_TWILIO_ACCOUNT_SID;
     const authToken = process.env.REACT_APP_TWILIO_AUTH_TOKEN;
-  
-    // TODO: create a centered modal that confirms if submit is successful
-    // name it as "napakiusap ko na"
+    const accountPhone = process.env.REACT_APP_TWILIO_PHONE_NUMBER
 
     const client = twilio(accountSid, authToken);
     
     await client.messages
       .create({
           to,
-          from: '+18148139589',
+          from: accountPhone,
           body,
       })
         .then(() => {

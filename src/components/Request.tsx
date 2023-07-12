@@ -46,7 +46,11 @@ function Request() {
     {
       name: "Alecxa",
       phone: "+639552806484"
-    }
+    },
+    {
+      name: "Kim",
+      phone: "+639675187814"
+    },
   ]
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [formValue, setFormValue] = useState<FormValue>({
